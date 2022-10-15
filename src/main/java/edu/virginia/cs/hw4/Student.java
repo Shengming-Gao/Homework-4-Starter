@@ -59,6 +59,9 @@ public class Student {
     }
 
     public double getGPA() {
+        if (transcript.courseHistory.isEmpty()) {
+            throw new IllegalStateException("No courses taken, cannot get GPA");
+        }
         double totalGradePoints = 0.0;
         int creditsAttempted = 0;
         for (Course course : transcript.courseHistory.keySet()) {
