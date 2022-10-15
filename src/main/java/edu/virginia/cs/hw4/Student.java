@@ -9,6 +9,16 @@ public class Student {
 
     public Student(int studentNumber, String name, String email) {
         this.studentNumber = studentNumber;
+        this.name = name;
+        this.email = email;
+        this.transcript = new Transcript(this);
+    }
+
+    public Student(int studentNumber, String name, String email, Transcript transcript) {
+        this.studentNumber = studentNumber;
+        this.name = name;
+        this.email = email;
+        this.transcript = transcript;
     }
 
     public int getStudentNumber() {
